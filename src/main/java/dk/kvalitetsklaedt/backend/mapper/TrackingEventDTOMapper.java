@@ -12,7 +12,7 @@ public class TrackingEventDTOMapper {
         entity.setSessionId(dto.sessionId());
         entity.setEventType(dto.eventType());
         entity.setTimestamp(dto.timestamp());
-        entity.setData(dto.data() == null ? null : dto.data().toString());
+        entity.setData(dto.eventData() == null ? null : dto.eventData().toString());
         return entity;
     }
 }

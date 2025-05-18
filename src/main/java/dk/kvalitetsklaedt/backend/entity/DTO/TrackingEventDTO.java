@@ -6,6 +6,6 @@ public record TrackingEventDTO(
     String sessionId,
     String eventType,
     String timestamp,
-    Map<String, Object> data
+    Map<String, Object> eventData
 ) {
 }

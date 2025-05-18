@@ -48,4 +48,33 @@ class TrackingControllerTest {
         verify(mapper).toEntity(any());
         verify(trackingEventRepository).save(entity);
     }
+
+    @Test
+    void trackEvent_withData_shouldSaveAndReturnOk() throws Exception {
+        String jsonRequest = """
+        {
+            "sessionId":"d0f179c5-e216-4a98-9b52-7d63c0d36bd5",
+            "timestamp":"2025-05-18T09:27:15.029Z",
+            "eventType":"confirm",
+            "eventData":{
+                "selectedProductType":"t-shirt",
+                "selectedSize":"XL",
+                "selectedColor":null,
+                "frequency":"En gang om året"
+            }
+        }
+        """;
+
+        TrackingEvent entity = new TrackingEvent();
+
+        when(mapper.toEntity(any())).thenReturn(entity);
+
+        mockMvc.perform(post("/api/tracking")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(jsonRequest))
+                .andExpect(status().isOk());
+
+        verify(mapper).toEntity(any());
+        verify(trackingEventRepository).save(entity);
+    }
 }
