@@ -24,8 +24,8 @@ public class CustomerController {
     @Autowired
     EmailService emailService;
 
-    @PostMapping
-    public ResponseEntity<?> createSubscription(@RequestBody CustomerAndFeedbackDTO request) {
+    @PostMapping("/subscribe-feedback")
+    public ResponseEntity<String> createSubscription(@RequestBody CustomerAndFeedbackDTO request) {
 
         Customer customer = new Customer();
         customer.setEmail(request.getEmail());

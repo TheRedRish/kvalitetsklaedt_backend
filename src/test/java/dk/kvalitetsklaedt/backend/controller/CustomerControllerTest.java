@@ -47,7 +47,7 @@ public class CustomerControllerTest {
                 }
                 """;
 
-        mockMvc.perform(post("/api/customers")
+        mockMvc.perform(post("/api/customers/subscribe-feedback")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(jsonRequest))
                 .andExpect(status().isOk())

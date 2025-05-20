@@ -89,7 +89,7 @@ public class EmailService {
             mailSender.send(message);
 
         } catch (MessagingException e) {
-            throw new RuntimeException("Fejl ved afsendelse af e-mail", e);
+            System.err.println("Kunne ikke sende mail: " + e.getMessage());
         }
     }
 }
