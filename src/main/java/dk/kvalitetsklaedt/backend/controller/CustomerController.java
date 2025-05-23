@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static dk.kvalitetsklaedt.backend.entity.Enum.TypeOfFeedback.ACCESSORY_FEEDBACK;
+
 @RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
@@ -40,5 +42,13 @@ public class CustomerController {
         emailService.sendConfirmationEmail(customer.getEmail());
 
         return ResponseEntity.ok("Tilmelding oprettet");
+    }
+
+        @PostMapping("/accessories-feedback")
+    public ResponseEntity<String> saveAccessoriesFeedback(@RequestBody Feedback feedback) {
+        feedback.setTypeOfFeedback(ACCESSORY_FEEDBACK);
+        feedbackRepo.save(feedback);
+
+        return ResponseEntity.ok("Feedback gemt");
     }
 }
