@@ -28,6 +28,7 @@ public class ProductDataInitializer {
                 product1.setProductType(ProductType.T_SHIRT);
                 product1.setProductTag(List.of(ProductTag.SUMMER, ProductTag.ALL_YEAR));
                 product1.setSKU("TSHIRT-WHT-001");
+                product1.setImageUrl("assets/images/t-shirt.png");
 
                 Product product2 = new Product();
                 product2.setProductName("Warm Winter Hoodie");
@@ -35,10 +36,11 @@ public class ProductDataInitializer {
                 product2.setProductSalePrice(300);
                 product2.setColor("Navy Blue");
                 product2.setProductMaterial("Fleece");
-                product2.setProductSize(ProductSize.Xl); // corrected casing
+                product2.setProductSize(ProductSize.Xl);
                 product2.setProductType(ProductType.HOODIE);
                 product2.setProductTag(List.of(ProductTag.WINTER));
                 product2.setSKU("HOODIE-NVY-002");
+                product2.setImageUrl("assets/images/hoodie.png");
 
                 Product product3 = new Product();
                 product3.setProductName("Formal Skjorte");
@@ -50,6 +52,7 @@ public class ProductDataInitializer {
                 product3.setProductType(ProductType.SKJORTE);
                 product3.setProductTag(List.of(ProductTag.SPRING, ProductTag.AUTUMN));
                 product3.setSKU("SKJORTE-BLU-003");
+                product3.setImageUrl("assets/images/shirt.png");
 
                 productRepository.saveAll(List.of(product1, product2, product3));
                 System.out.println("Sample products inserted.");
