@@ -50,7 +50,4 @@ public class Product {
 
     @Column(name = "sku")
     private String SKU;
-
-    @Column(name = "image_url")
-    private String imageUrl;
 }
