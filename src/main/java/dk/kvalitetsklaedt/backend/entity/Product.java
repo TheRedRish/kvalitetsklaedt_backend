@@ -43,11 +43,14 @@ public class Product {
     private ProductType productType;
 
     @ElementCollection(targetClass = ProductTag.class)
-    @Enumerated(EnumType.STRING) //
+    @Enumerated(EnumType.STRING)
     @CollectionTable(name = "product_tags", joinColumns = @JoinColumn(name = "product_id"))
     @Column(name = "product_tag")
     private List<ProductTag> productTag;
 
     @Column(name = "sku")
     private String SKU;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 }
