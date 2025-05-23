@@ -87,6 +87,7 @@ public class EmailService {
             helper.setText(htmlContent, true);
 
             mailSender.send(message);
+            System.out.println("succes");
 
         } catch (MessagingException e) {
             System.err.println("Kunne ikke sende mail: " + e.getMessage());
